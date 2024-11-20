@@ -58,6 +58,8 @@ for i in range(len(train_data_raw)):
 for i in range(len(eval_data_raw)):
     eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})
 
+train_data = train_data[:1000]
+eval_data = eval_data[:100]
 
 def preprocess_function(example):
     prompt = example["prompt"]
