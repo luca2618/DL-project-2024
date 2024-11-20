@@ -40,7 +40,7 @@ lora_config = LoraConfig(
 model = get_peft_model(model, lora_config)
 
 # 3. Prepare the dataset
-ds = load_dataset(datasets[dataset_name])
+ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
 
 ds = ds['train'].to_pandas()
 
@@ -58,7 +58,7 @@ for i in range(len(train_data_raw)):
 for i in range(len(eval_data_raw)):
     eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})
 
-train_data = train_data[:1000]
+train_data = train_data[:2000]
 eval_data = eval_data[:100]
 
 def preprocess_function(example):
@@ -89,6 +89,7 @@ training_args = TrainingArguments(
     num_train_epochs=1,
     learning_rate=2e-4,
     fp16=True, # Use mixed precision
+    logging_strategy="steps", # Log every 100 steps
     logging_dir="./logs", # Logs
     logging_steps=100, # Log every 100 steps
     save_total_limit=2, # Save only the last 2 checkpoints
