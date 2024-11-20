@@ -25,7 +25,7 @@
 nvidia-smi
 # Load the cuda module
 #load enviroment
-source DL/bin/activate
+source $BLACHOLE/DL/bin/activate
 
 python LoRA.py
 
