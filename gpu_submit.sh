@@ -27,7 +27,7 @@ nvidia-smi
 #load enviroment
 source DL/bin/activate
 
-python train.py
+python LoRA.py
 
 
 
