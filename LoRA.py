@@ -59,9 +59,6 @@ for i in range(len(train_data_raw)):
 for i in range(len(eval_data_raw)):
     eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})
 
-train_data = train_data[:2000]
-eval_data = eval_data[:100]
-
 def preprocess_function(example):
     prompt = example["prompt"]
     answer = example["answer"]
@@ -87,7 +84,7 @@ training_args = TrainingArguments(
     save_steps=500,
     per_device_train_batch_size=2, # Batch size per GPU
     gradient_accumulation_steps=4, # Accumulate gradients
-    num_train_epochs=1,
+    num_train_epochs=1.5,
     learning_rate=2e-4,
     fp16=True, # Use mixed precision
     logging_strategy="steps", # Log every 100 steps
