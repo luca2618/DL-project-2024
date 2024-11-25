@@ -2,6 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 from peft import LoraConfig, get_peft_model
 from datasets import Dataset, load_dataset
+import json
 
 
 torch_device = 'cuda:0'
@@ -23,8 +24,8 @@ datasets = {
 model_name = "Mistral-7B-Instruct-v0.1" # Choose a model from the list above
 dataset_name = "Math" # Choose a dataset from the list above
 
-tokenizer = AutoTokenizer.from_pretrained(models[model_name], cache_dir='./cache', device_map=torch_device)
-model = AutoModelForCausalLM.from_pretrained(models[model_name], cache_dir='./cache', torch_dtype=torch.float16, device_map=torch_device)
+tokenizer = AutoTokenizer.from_pretrained(models[model_name], use_auth_token="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", cache_dir='./cache', device_map=torch_device)
+model = AutoModelForCausalLM.from_pretrained(models[model_name], use_auth_token="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", cache_dir='./cache', torch_dtype=torch.float16, device_map=torch_device)
 tokenizer.pad_token = tokenizer.eos_token
 
 # 2. Define the LoRA configuration
@@ -107,6 +108,13 @@ trainer = Trainer(
 
 # 6. Fine-tune the model
 trainer.train()
+
+# File path where you want to save the log
+log_file_path = f"./cache/{training_args.output_dir}/log_history.json"
+
+# Save log history to a file
+with open(log_file_path, "w") as log_file:
+    json.dump(trainer.state.log_history, log_file, indent=4)
 
 # 7. Save the fine-tuned LoRA model
 model.save_pretrained(f"./lora_model-{model_name}_dataset-{dataset_name}_v1")
