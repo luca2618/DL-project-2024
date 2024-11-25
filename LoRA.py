@@ -81,7 +81,7 @@ eval_dataset = Dataset.from_list(eval_data).map(preprocess_function, batched=Tru
 
 # 4. Training configuration
 training_args = TrainingArguments(
-    output_dir=f"./lora_model-{model_name}_dataset-{dataset_name}_v1",
+    output_dir=f"lora_model-{model_name}_dataset-{dataset_name}_v1",
     evaluation_strategy="steps", # Evaluate every 500 steps
     save_strategy="steps", # Save every 500 steps
     save_steps=500,
