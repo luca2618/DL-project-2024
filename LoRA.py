@@ -110,12 +110,12 @@ trainer = Trainer(
 trainer.train()
 
 # File path where you want to save the log
-log_file_path = f"./cache/{training_args.output_dir}/log_history.json"
+log_file_path = f"./log/{model_name}_{dataset_name}_log_history.json"
 
 # Save log history to a file
 with open(log_file_path, "w") as log_file:
     json.dump(trainer.state.log_history, log_file, indent=4)
 
 # 7. Save the fine-tuned LoRA model
-model.save_pretrained(f"./lora_model-{model_name}_dataset-{dataset_name}_v1")
-tokenizer.save_pretrained(f"./lora_model-{model_name}_dataset-{dataset_name}_v1")
+model.save_pretrained(f"./trained_models/lora_model-{model_name}_dataset-{dataset_name}_v1")
+tokenizer.save_pretrained(f"./trained_models/lora_model-{model_name}_dataset-{dataset_name}_v1")
