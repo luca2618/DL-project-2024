@@ -28,11 +28,10 @@ export HF_TOKEN_PATH="/dtu/blackhole/00/167776/DL-project-2024/cache/token"
 #load enviroment
 source "${BLACKHOLE}/DL/bin/activate"
 
-model = mistralai/Mistral-7B-v0.1
-dataset = meta-math/MetaMathQA
+model=mistralai/Mistral-7B-v0.1
+dataset=meta-math/MetaMathQA
 
-python LoRA.py $model $dataset
-
+python LoRA.py "$model" "$dataset"
 
 
 
