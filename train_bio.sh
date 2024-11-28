@@ -29,7 +29,7 @@ export HF_TOKEN_PATH="/dtu/blackhole/00/167776/DL-project-2024/cache/token"
 source "${BLACKHOLE}/DL/bin/activate"
 
 model=Mistral-7B-Instruct-v0.1
-dataset=Math
+dataset=Bio
 
 python LoRA.py "$model" "$dataset"
 
