@@ -3,6 +3,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments,
 from peft import LoraConfig, get_peft_model
 from datasets import Dataset, load_dataset
 import json
+import sys
 
 
 torch_device = 'cuda:0'
@@ -21,8 +22,15 @@ datasets = {
 }
 
 # 1. Choose and pre-download the model and tokenizer
-model_name = "Mistral-7B-Instruct-v0.1" # Choose a model from the list above
-dataset_name = "Math" # Choose a dataset from the list above
+#model_name = "Mistral-7B-Instruct-v0.1" # Choose a model from the list above
+#dataset_name = "Math" # Choose a dataset from the list above
+
+model_name= sys.argv[1]
+dataset_name = sys.argv[2]
+
+print("selected:")
+print("model:"+model_name)
+print("dataset:"+dataset_name)
 
 tokenizer = AutoTokenizer.from_pretrained(models[model_name], use_auth_token="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", cache_dir='./cache', device_map=torch_device)
 model = AutoModelForCausalLM.from_pretrained(models[model_name], use_auth_token="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", cache_dir='./cache', torch_dtype=torch.float16, device_map=torch_device)
@@ -54,7 +62,7 @@ eval_data_raw = ds[split_idx:]
 # Preprocess the dataset
 train_data = []
 eval_data = []
-for i in range(len(train_data_raw)):
+for i in range(len(train_data_raw[:200000])):
     train_data.append({"prompt": train_data_raw.iloc[i]['query'], "answer": train_data_raw.iloc[i]['response']})
 for i in range(len(eval_data_raw)):
     eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})

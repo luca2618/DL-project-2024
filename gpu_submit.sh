@@ -9,7 +9,7 @@
 ### -- Select the resources: 1 gpu in exclusive process mode --
 #BSUB -gpu "num=1:mode=exclusive_process"
 ### -- set walltime limit: hh:mm --  maximum 24 hours for GPU-queues right now
-#BSUB -W 12:00
+#BSUB -W 00:10
 # request 16GB of system-memory
 #BSUB -R "rusage[mem=16GB]"
 ### -- send notification at start --
@@ -28,7 +28,10 @@ export HF_TOKEN_PATH="/dtu/blackhole/00/167776/DL-project-2024/cache/token"
 #load enviroment
 source "${BLACKHOLE}/DL/bin/activate"
 
-python LoRA.py
+model = mistralai/Mistral-7B-v0.1
+dataset = meta-math/MetaMathQA
+
+python LoRA.py $model $dataset
 
 
 
