@@ -17,7 +17,7 @@ models = { # name : path (model, dataset)
 }
 datasets = {
     "Math" : "meta-math/MetaMathQA",
-    "Bio" : "BioMistral/BioMistralQA", # Dataset doesn't exist (Find another one)
+    "Bio" : "qiaojin/PubMedQA", # Dataset doesn't exist (Find another one)
 }
 
 # 1. Choose and pre-download the model and tokenizer
