@@ -13,7 +13,6 @@ models = { # name : path (model, dataset)
     "Mistral-7B-v0.1" : "mistralai/Mistral-7B-v0.1",
     "Mistral-7B-Instruct-v0.1" : "mistralai/Mistral-7B-Instruct-v0.1",
     "BioMistral-7B" : "BioMistral/BioMistral-7B",
-    "Mathstral-7B" : "mistralai/Mathstral-7b-v0.1",
     "MetaMath-Mistral-7B" : "meta-math/MetaMath-Mistral-7B"
 }
 datasets = {
