@@ -48,7 +48,10 @@ lora_config = LoraConfig(
 model = get_peft_model(model, lora_config)
 
 # 3. Prepare the dataset
-ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
+if dataset_name == "bio":
+    ds = load_dataset(datasets[dataset_name], "pqa_labeled", cache_dir='./cache')
+else:
+    ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
 
 ds = ds['train'].to_pandas()[:120000]
 
