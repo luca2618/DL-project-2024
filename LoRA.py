@@ -19,13 +19,21 @@ datasets = {
     "Math" : "meta-math/MetaMathQA",
     "Bio" : "qiaojin/PubMedQA", # Dataset doesn't exist (Find another one)
 }
+labels = {"Math" : ["query", "reponse"],
+          "Bio" : ["question", "long_answer"]
+          }
 
 # 1. Choose and pre-download the model and tokenizer
 #model_name = "Mistral-7B-Instruct-v0.1" # Choose a model from the list above
 #dataset_name = "Math" # Choose a dataset from the list above
 
+
+
 model_name= sys.argv[1]
 dataset_name = sys.argv[2]
+
+question_label = labels[dataset_name][0]
+answer_label = labels[dataset_name][1]
 
 print("selected:")
 print("model:"+model_name)
@@ -65,9 +73,9 @@ eval_data_raw = ds[split_idx:]
 train_data = []
 eval_data = []
 for i in range(len(train_data_raw)):
-    train_data.append({"prompt": train_data_raw.iloc[i]['query'], "answer": train_data_raw.iloc[i]['response']})
+    train_data.append({"prompt": train_data_raw.iloc[i][question_label], "answer": train_data_raw.iloc[i][answer_label]})
 for i in range(len(eval_data_raw)):
-    eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})
+    eval_data.append({"prompt": eval_data_raw.iloc[i][question_label], "answer": eval_data_raw.iloc[i][answer_label]})
 
 def preprocess_function(example):
     prompt = example["prompt"]
