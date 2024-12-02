@@ -50,7 +50,7 @@ model = get_peft_model(model, lora_config)
 # 3. Prepare the dataset
 ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
 
-ds = ds['train'].to_pandas()
+ds = ds['train'].to_pandas()[:120000]
 
 # Split the dataset
 split = 0.9
@@ -61,7 +61,7 @@ eval_data_raw = ds[split_idx:]
 # Preprocess the dataset
 train_data = []
 eval_data = []
-for i in range(len(train_data_raw[:200000])):
+for i in range(len(train_data_raw)):
     train_data.append({"prompt": train_data_raw.iloc[i]['query'], "answer": train_data_raw.iloc[i]['response']})
 for i in range(len(eval_data_raw)):
     eval_data.append({"prompt": eval_data_raw.iloc[i]['query'], "answer": eval_data_raw.iloc[i]['response']})
