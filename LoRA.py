@@ -48,7 +48,7 @@ lora_config = LoraConfig(
 model = get_peft_model(model, lora_config)
 
 # 3. Prepare the dataset
-if dataset_name == "bio":
+if dataset_name == "Bio":
     ds = load_dataset(datasets[dataset_name], "pqa_labeled", cache_dir='./cache')
 else:
     ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
