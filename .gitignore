@@ -1,6 +1,8 @@
 
 log/
-*lora_model-Mistral
+**/lora_model-Mistral*/
+cache/
+/trained_models
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
