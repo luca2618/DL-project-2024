@@ -103,7 +103,7 @@ eval_dataset = Dataset.from_list(eval_data).map(preprocess_function, batched=Tru
 train_data_length = len(train_dataset)
 epochs = 1.5
 batch_size = 4
-gradient_accumulation_steps = 1
+gradient_accumulation_steps = 2
 effective_batch_size = gradient_accumulation_steps*batch_size
 
 total_steps = epochs*train_data_length/effective_batch_size
