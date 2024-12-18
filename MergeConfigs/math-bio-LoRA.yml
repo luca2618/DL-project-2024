@@ -1,0 +1,16 @@
+models:
+  - model: ./hub/models--LoRABio--MistralInstruct--PubMedQA--FullDataset--7B--v1--unloaded
+    parameters:
+      density: 0.5
+      weight: 0.5
+  - model: ./hub/models--LoRAMath--MistralInstruct--MetaMathQA--FullDataset--7B--v1--unloaded
+    parameters:
+      density: 0.5
+      weight: 0.5
+merge_method: dare_ties
+base_model: mistralai/Mistral-7B-Instruct-v0.1
+parameters:
+  normalize: false
+  int8_mask: true
+dtype: float16
+
