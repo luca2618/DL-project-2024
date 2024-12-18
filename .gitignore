@@ -3,6 +3,8 @@ log/
 **/lora_model-Mistral*/
 cache/
 /trained_models
+.err
+.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
