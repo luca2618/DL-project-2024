@@ -1,0 +1,53 @@
+DeepEval.ipynb
+LoRA PEFT Implementation.ipynb
+LoRA.py
+README.md
+Testing.ipynb
+cache
+chat.py
+checkpoint_backup
+gpu_submit.sh
+log
+merge.ipynb
+train_bio.sh
+train_math.sh
+trained_models
+selected:
+model:Mistral-7B-Instruct-v0.1
+dataset:Bio
+#########################################################################
+Total steps:37632.1875
+Batch size: 4
+Effective Batch size: 8
+#########################################################################
+{'loss': 0.3329, 'grad_norm': 0.8006253838539124, 'learning_rate': 0.00018669749149659865, 'epoch': 0.1}
+{'eval_runtime': 551.5776, 'eval_samples_per_second': 19.152, 'eval_steps_per_second': 2.395, 'epoch': 0.1}
+{'loss': 0.3257, 'grad_norm': 0.6845937371253967, 'learning_rate': 0.00017336840986394557, 'epoch': 0.2}
+{'eval_runtime': 551.6179, 'eval_samples_per_second': 19.151, 'eval_steps_per_second': 2.395, 'epoch': 0.2}
+{'loss': 0.3261, 'grad_norm': 0.7173565030097961, 'learning_rate': 0.00016003932823129252, 'epoch': 0.3}
+{'eval_runtime': 551.1924, 'eval_samples_per_second': 19.166, 'eval_steps_per_second': 2.397, 'epoch': 0.3}
+{'loss': 0.3235, 'grad_norm': 0.7784560918807983, 'learning_rate': 0.00014671024659863947, 'epoch': 0.4}
+{'eval_runtime': 551.751, 'eval_samples_per_second': 19.146, 'eval_steps_per_second': 2.394, 'epoch': 0.4}
+{'loss': 0.3222, 'grad_norm': 0.8491387963294983, 'learning_rate': 0.00013338647959183674, 'epoch': 0.5}
+{'eval_runtime': 551.7022, 'eval_samples_per_second': 19.148, 'eval_steps_per_second': 2.394, 'epoch': 0.5}
+{'loss': 0.3226, 'grad_norm': 0.7911224961280823, 'learning_rate': 0.000120062712585034, 'epoch': 0.6}
+{'eval_runtime': 551.5104, 'eval_samples_per_second': 19.155, 'eval_steps_per_second': 2.395, 'epoch': 0.6}
+{'loss': 0.3232, 'grad_norm': 0.7332035899162292, 'learning_rate': 0.0001067389455782313, 'epoch': 0.7}
+{'eval_runtime': 550.2473, 'eval_samples_per_second': 19.199, 'eval_steps_per_second': 2.401, 'epoch': 0.7}
+{'loss': 0.3212, 'grad_norm': 0.6444113254547119, 'learning_rate': 9.341517857142857e-05, 'epoch': 0.8}
+{'eval_runtime': 550.2351, 'eval_samples_per_second': 19.199, 'eval_steps_per_second': 2.401, 'epoch': 0.8}
+{'loss': 0.3209, 'grad_norm': 0.8220754861831665, 'learning_rate': 8.009672619047619e-05, 'epoch': 0.9}
+{'eval_runtime': 551.1546, 'eval_samples_per_second': 19.167, 'eval_steps_per_second': 2.397, 'epoch': 0.9}
+{'loss': 0.3193, 'grad_norm': 0.6491644978523254, 'learning_rate': 6.676764455782312e-05, 'epoch': 1.0}
+{'eval_runtime': 551.6019, 'eval_samples_per_second': 19.151, 'eval_steps_per_second': 2.395, 'epoch': 1.0}
+{'loss': 0.3118, 'grad_norm': 0.7879387140274048, 'learning_rate': 5.344387755102041e-05, 'epoch': 1.1}
+{'eval_runtime': 551.633, 'eval_samples_per_second': 19.15, 'eval_steps_per_second': 2.395, 'epoch': 1.1}
+{'loss': 0.3132, 'grad_norm': 0.7282046675682068, 'learning_rate': 4.012542517006803e-05, 'epoch': 1.2}
+{'eval_runtime': 551.581, 'eval_samples_per_second': 19.152, 'eval_steps_per_second': 2.395, 'epoch': 1.2}
+{'loss': 0.3109, 'grad_norm': 0.7195305228233337, 'learning_rate': 2.679634353741497e-05, 'epoch': 1.3}
+{'eval_runtime': 551.542, 'eval_samples_per_second': 19.154, 'eval_steps_per_second': 2.395, 'epoch': 1.3}
+{'loss': 0.3098, 'grad_norm': 0.7042003273963928, 'learning_rate': 1.3472576530612246e-05, 'epoch': 1.4}
+{'eval_runtime': 551.8348, 'eval_samples_per_second': 19.143, 'eval_steps_per_second': 2.394, 'epoch': 1.4}
+{'loss': 0.3116, 'grad_norm': 0.7952976226806641, 'learning_rate': 1.488095238095238e-07, 'epoch': 1.5}
+{'eval_runtime': 551.9524, 'eval_samples_per_second': 19.139, 'eval_steps_per_second': 2.393, 'epoch': 1.5}
+{'train_runtime': 43978.4024, 'train_samples_per_second': 6.846, 'train_steps_per_second': 0.856, 'train_loss': 0.3196620863108408, 'epoch': 1.5}
