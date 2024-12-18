@@ -16,7 +16,7 @@ models = { # name : path (model, dataset)
     "MetaMath-Mistral-7B" : "meta-math/MetaMath-Mistral-7B"
 }
 datasets = {
-    "Math" : "meta-math/MetaMathQA-40k",
+    "Math" : "meta-math/MetaMathQA",
     "Bio" : "qiaojin/PubMedQA", # Dataset doesn't exist (Find another one)
 }
 labels = {"Math" : ["query", "response"],
@@ -63,7 +63,7 @@ else:
     ds = load_dataset(datasets[dataset_name], cache_dir='./cache')
 
 
-total_data_points = 40000
+total_data_points = 400000
 
 ds = ds['train'].to_pandas()[:total_data_points]
 

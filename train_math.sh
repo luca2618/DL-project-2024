@@ -24,7 +24,8 @@
 
 nvidia-smi
 # Load the cuda module
-export HF_TOKEN_PATH="/dtu/blackhole/00/167776/DL-project-2024/cache/token"
+#export HF_TOKEN_PATH="/dtu/blackhole/00/167776/DL-project-2024/cache/token"
+export HF_HOME="/dtu/blackhole/00/167776/cache"
 #load enviroment
 source "${BLACKHOLE}/DL/bin/activate"
 
